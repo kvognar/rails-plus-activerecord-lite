@@ -1,7 +1,16 @@
+require_relative './params'
+require_relative './session'
+require 'active_support/core_ext'
+require 'active_support/inflector'
+require 'erb'
+
 class ControllerBase
+  attr_reader :req, :res, :params
   
   def initialize(req, res, route_params = {})
-    
+    @req = req
+    @res = res
+    @params = Params.new(req, route_params)
   end
   
   def already_built_response?
