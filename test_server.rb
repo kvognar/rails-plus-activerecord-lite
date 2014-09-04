@@ -49,6 +49,8 @@ end
 #   end
 # end
 
+
+
 class CatsController < ControllerBase
   def index
     @cats = Cat.all
@@ -58,7 +60,8 @@ class CatsController < ControllerBase
   end
   
   def new
-    @cat = 
+    @cat = Cat.new
+    @humans = Human.all
     render :new
   end
   
@@ -76,8 +79,8 @@ class CatsController < ControllerBase
     # render_content(params, "text/text")
   end
   
-  
 end
+
 
 router = Router.new
 router.draw do

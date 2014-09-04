@@ -7,7 +7,15 @@
     id="cat_name"
     name="cat[name]">
     
-  <input type="hidden" name="cat[owner_id]" value="1">
+  <label for="cat_owner_id">
+    Owner
+  </label>
+  
+  <select name="cat[owner_id]" id="cat_owner_id">
+    <% @humans.each do |human| %>
+    <option value="<%= human.id %>"><%= human.fname %></option>
+    <% end %>
+  </select>
   <input type="submit" value="Make a cat">
     
 </form>
