@@ -1,0 +1,13 @@
+<form action="<%= cats_path %>" method="POST">
+  <label for="cat_name">
+    Name
+  </label>
+  <input 
+    type="text"
+    id="cat_name"
+    name="cat[name]">
+    
+  <input type="hidden" name="cat[owner_id]" value="1">
+  <input type="submit" value="Make a cat">
+    
+</form>
