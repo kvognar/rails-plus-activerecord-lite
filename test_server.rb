@@ -39,17 +39,6 @@ class House < SQLObject
   finalize!
 end
 
-# class StatusesController < ControllerBase
-#   def index
-#     statuses = $statuses.select do |s|
-#       s[:cat_id] == Integer(params[:cat_id])
-#     end
-#
-#     render_content(statuses.to_s, "text/text")
-#   end
-# end
-
-
 
 class CatsController < ControllerBase
   def index
@@ -67,16 +56,13 @@ class CatsController < ControllerBase
   
   def show
     @cat = Cat.find(Integer(params[:cat_id]))
-    
     render :show
   end
   
   def create
-    print params
     @cat = Cat.new(params[:cat])
     @cat.save
     redirect_to cats_path
-    # render_content(params, "text/text")
   end
   
 end
