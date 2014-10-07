@@ -25,6 +25,7 @@ class DBConnection
   end
 
   def self.instance
+    self.open(CATS_DB_FILE)
     reset if @db.nil?
 
     @db
@@ -49,5 +50,6 @@ class DBConnection
   private
 
   def initialize(db_file_name)
+    
   end
 end
